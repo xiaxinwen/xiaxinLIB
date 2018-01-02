@@ -1,0 +1,498 @@
+/*
+* @Author: Peter
+* @Date:   2017-06-15 10:45:24
+* @Last Modified by:   LMZ
+* @Last Modified time: 2017-09-19 16:53:38
+*/
+
+body {
+  font-size: 14px;
+}
+
+.hlpclg {
+  opacity: 0;
+}
+
+.web-circle {
+  width: 530px;
+  height: 530px;
+  padding-top: 30px;
+  position: relative;
+}
+
+.web-circle-bg {
+  width: 100%;
+  height: 100%;
+  background-image: url('./img/web-new.png');
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  /* animation: circles 6.5s linear; */
+}
+
+.web-circle,
+.web-circle * {
+  box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+}
+
+.circle h3 {
+  margin: 0;
+  padding: 0;
+}
+
+.circle {
+  width: 494px;
+  height: 494px;
+  margin: 0 auto;
+  position: relative;
+  border: 1px solid transparent;
+  background: transparent;
+  border-radius: 50%;
+  font-size: 14px;
+}
+
+.circle-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 1px solid transparent;
+  background: url('./img/circle-bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1;
+  /* animation: circles 6.5s linear; */
+}
+
+@keyframes circles {
+  0%,
+  84.5% {
+    opacity: 0;
+    transform: rotate(0deg);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(-360deg);
+  }
+}
+
+.circle-1 {
+  width: 440px;
+  height: 440px;
+  margin: 26px auto;
+  border: 1px solid transparent;
+  border-radius: 50%;
+}
+
+.circle-2 {
+  width: 220px;
+  height: 220px;
+  margin: 107px auto;
+  background: #FFF;
+  border-radius: 50%;
+  position: relative;
+  border: 3px solid transparent;
+}
+
+.circle-2-1 {
+  left: 0;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
+}
+
+.circle-2-2 {
+  right: 0;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
+}
+
+.circle-2-3 {
+  width: 100%;
+  height: 50%;
+  left: 0;
+  bottom: 0;
+  position: absolute;
+  overflow: hidden;
+}
+
+.circle-angle {
+  width: 214px;
+  height: 214px;
+  border: 3px solid transparent;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.leftcircle {
+  border-top: 3px solid #ccc;
+  border-right: 3px solid #ccc;
+  left: 0;
+  transform: rotate(-75deg);
+  /* animation: leftcircle 2.5s linear; */
+}
+
+
+/**/
+
+@keyframes leftcircle {
+  0%,
+  60% {
+    transform: rotate(45deg);
+  }
+  100% {
+    transform: rotate(-75deg);
+  }
+}
+
+.bottomcircle {
+  bottom: 0;
+  border-left: 3px solid #ccc;
+  border-top: 3px solid #ccc;
+  transform: rotate(-105deg);
+  /* animation: bottomcircle 4s linear; */
+}
+
+@keyframes bottomcircle {
+  0%,
+  75% {
+    transform: rotate(45deg);
+  }
+  100% {
+    transform: rotate(-105deg);
+  }
+}
+
+.rightcircle {
+  border-left: 3px solid #ccc;
+  border-bottom: 3px solid #ccc;
+  right: 0;
+  transform: rotate(-135deg);
+  /* animation: rightcircle 5.5s linear; */
+}
+
+@keyframes rightcircle {
+  0%,
+  81.8% {
+    transform: rotate(45deg);
+  }
+  81.9%,
+  82% {
+    transform: rotate(-10deg);
+  }
+  100% {
+    transform: rotate(-135deg);
+  }
+}
+
+.circle-3 {
+  width: 160px;
+  height: 160px;
+  margin: 20px auto;
+  border: 10px solid #fd6e27;
+  background: transparent;
+  border-radius: 50%;
+  /* animation: sliderUp 1s linear; */
+}
+
+@keyframes sliderUp{
+  from {
+    opacity: 0;
+    transform: translate3d(0, 50px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.circle-3 .name {
+  margin-top: 50px;
+}
+
+.circle-3 h3 {
+  font-size: 24px;
+  text-align: center;
+  color: #585c61;
+}
+
+.arrow-left {
+  bottom: 25%;
+  left: 6.7%;
+  position: absolute;
+  margin-bottom: -7px;
+  margin-left: -7px;
+  /* animation: bounceInUpArrowLeft 3s linear; */
+}
+
+.arrow-right {
+  bottom: 25%;
+  right: 6.7%;
+  position: absolute;
+  margin-bottom: -7px;
+  margin-right: -7px;
+  /* animation: bounceInUpArrowRight 4.5s linear; */
+}
+
+.arrow-top {
+  left: 50%;
+  top: -8px;
+  position: absolute;
+  margin-left: -8px;
+  /* animation: bounceInUpArrowTop 1.5s linear; */
+}
+
+.arrow-circle-1 {
+  width: 14px;
+  height: 14px;
+  border: 1px solid #d2d2d2;
+  border-radius: 50%;
+  background: #FFF;
+  position: relative;
+}
+
+.arrow-circle-2 {
+  width: 6px;
+  height: 6px;
+  margin: 4px;
+  background: #fd6e27;
+  border-radius: 50%;
+}
+
+.arrow .line {
+  position: absolute;
+  height: 10px;
+  width: 60px;
+  background: url('./img/arrow2.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-x: -14px;
+}
+
+.arror .line .con {
+  position: relative;
+}
+
+.arrow-left .arrow-circle-1 .line {
+  transform: rotate(150deg);
+  transform-origin: left center;
+  left: -8px;
+  bottom: -8px;
+}
+
+.arrow-right .arrow-circle-1 .line {
+  transform: rotate(30deg);
+  transform-origin: left;
+  left: 24px;
+  bottom: -8px;
+}
+
+.arrow-top .arrow-circle-1 .line {
+  transform: rotate(-90deg);
+  top: -16px;
+  left: 7px;
+  transform-origin: left;
+}
+
+.circle-half {
+  z-index: -1;
+  border: 5px solid #fff;
+  background: #fff;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.circle-half-left {
+  bottom: 25%;
+  left: 6.7%;
+  margin-bottom: -61px;
+  margin-left: -61px;
+  /* animation: circleArrowLeft 3s linear; */
+}
+
+.circle-half-right {
+  bottom: 25%;
+  right: 6.7%;
+  margin-bottom: -61px;
+  margin-right: -61px;
+  /* animation: circleArrowRight 4.5s linear; */
+}
+
+.circle-half-right .circle-part3-bg,
+.circle-half-right .circle-part2-bg {
+  transform: rotate(180deg);
+}
+
+.circle-half-top {
+  left: 50%;
+  top: -61px;
+  margin-left: -61px;
+  /* animation: circleArrowTop 1.5s linear; */
+}
+
+.circle-half-top .circle-part3-bg,
+.circle-half-top .circle-part2-bg {
+  transform: rotate(60deg);
+}
+
+.circle-half .circle-part3 .circle-part3-bg {
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  z-index: 10;
+  background: url('./img/arrow4.png');
+  background-size: cover;
+  border-radius: 50%;
+}
+
+.circle-half .circle-part3 {
+  width: 110px;
+  height: 110px;
+  border: 1px solid transparent;
+  position: relative;
+  border-color: transparent;
+}
+
+.circle-half .circle-part3 .circle-part2 {
+  width: 100px;
+  height: 100px;
+  margin: 4px;
+  border: 1px solid transparent;
+  border-color: transparent;
+  position: relative;
+}
+
+.circle-half .circle-part3 .circle-part2 .circle-part2-bg {
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  z-index: 10;
+  background: url('./img/arrow3.png');
+  background-size: cover;
+  border-radius: 50%;
+}
+
+.circle-half .circle-part3 .circle-part2 .circle-part4 {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: #ffe5d9;
+  border: 6px solid #fd6e27;
+  margin: 8px;
+  text-align: center;
+}
+
+.circle-half .circle-part3 .circle-part2 .circle-part4 h3 {
+  line-height: 72px;
+  font-size: 20px;
+  color: #585c61;
+}
+
+.part3-triangle-1 {
+  position: absolute;
+  top: 9%;
+  right: 9%;
+}
+
+.right-part {
+  position: absolute;
+  width: 100%;
+}
+
+.left-part {
+  position: absolute;
+  width: 100%;
+  transform: rotate(-10deg);
+}
+
+.custom-animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  animation-iteration-count: 1;
+}
+
+@keyframes bounceInUpArrowTop {
+  from,
+  67% {
+    opacity: 0;
+    transform: translate3d(0, 30px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes bounceInUpArrowLeft {
+  from,
+  83.3% {
+    opacity: 0;
+    transform: translate3d(0, 30px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes bounceInUpArrowRight {
+  from,
+  88.9% {
+    opacity: 0;
+    transform: translate3d(0, 30px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes circleArrowTop {
+  from,
+  66.7% {
+    top: 50%;
+    margin-top: -61px;
+    opacity: 0;
+  }
+  to {
+    margin-top: 0px;
+    top: -61px;
+    opacity: 1;
+  }
+}
+
+@keyframes circleArrowLeft {
+  from,
+  83.3% {
+    bottom: 50%;
+    left: 50%;
+    opacity: 0;
+  }
+  to {
+    bottom: 25%;
+    left: 6.7%;
+    opacity: 1;
+  }
+}
+
+@keyframes circleArrowRight {
+  from,
+  88.9% {
+    bottom: 50%;
+    right: 50%;
+    opacity: 0;
+  }
+  to {
+    bottom: 25%;
+    right: 6.7%;
+    opacity: 1;
+  }
+}

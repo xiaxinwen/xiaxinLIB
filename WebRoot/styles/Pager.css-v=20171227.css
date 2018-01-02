@@ -1,0 +1,38 @@
+/* jquery.page.js css  */
+#pager{background:#fff; padding:0px 10px; border:1px solid #ccc;}
+ul.pages {display:block;border:none;text-transform:uppercase;font-size:10pt; margin:5px 0 35px;padding:0;}
+ul.pages input { padding:0px; margin:0 5px 2px 5px; vertical-align:middle;}
+ul.pages li {
+	list-style:none;
+	font-size:10pt;
+	float:left;
+	border:1px solid #ccc;
+	text-decoration:none;
+	margin:0 5px 0 0;
+	padding:2px 8px;
+}
+
+ul.pages li:hover {
+	border:1px solid #999;
+    background-color: #ececec;
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f9f9f9), to(#e8e8e8));
+    background-image: -moz-linear-gradient(#f9f9f9, #e8e8e8);
+    background-image: -o-linear-gradient(#f9f9f9, #e8e8e8);
+    background-image: linear-gradient(#f9f9f9, #e8e8e8);
+}
+ul.pages li.pgEmpty {display: none;}
+/*
+ul.pages li.pgEmpty {border:1px solid #ccc;color:#f28300;background-color:#f0f0f0;}
+*/
+ul.pages li.thpoint {border:none; cursor:auto; color:#333; font-size:10pt; vertical-align:middle; background-color:#fff;}
+ul.pages li.pgCurrent {
+	padding: 2px 8px;
+	border:1px solid #e33b00;
+	color:#FFF;
+	font-weight:bold;
+    background-color: #f28300;
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f28300), to(#e37b00));
+    background-image: -moz-linear-gradient(#f28300, #e37b00);
+    background-image: -o-linear-gradient(#f28300, #e37b00);
+    background-image: linear-gradient(#f28300, #e37b00);
+	}

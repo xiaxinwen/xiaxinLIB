@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta content="云TMS、SAAS TMS、供应链协同、物流可视化、物流云、物流管理云平台、物流系统对接、物流生态圈、物流大数据、运输跟踪、TMS租用、运输管理系统租用、云ROS、云WMS"  name="keywords">
+<meta content="上海毕铃信息科技有限公司是唯智信息旗下的全资子公司。公司致力于让更多企业率先搭上物流互联网的快车，专业提供完整的物流公有云解决方案。物流链系列产品包括有：SAAS云TMS运输管理服务、云WMS仓储管理服务、云ROS路径优化服务、云盒追踪服务、E－HUB数据对接服务。供应链协同,物流可视化,物流管理云平台,物流系统对接,物流生态圈,物流大数据,运输跟踪,TMS运输管理系统租用"  name="description">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+    <link href="css/index.css" rel="stylesheet" type="text/css">
+    <script src=js/jquery-1.8.0.min.js" type="text/javascript"></script>
+    <script src="js/cookie.js" type="text/javascript"></script>
+    <script src="js/jquery-powerFloat.js"></script>
+    <script src="js/jquery.message.js"></script>
+    <script src="js/application.js" type="text/javascript"></script>
+    <script src="js/aes.js"></script>
+    <script src="js/layer.js"></script>
+    <script src="js/template.js"></script>
+    <script src="js/template.helper.js"></script>
+    <script src="js/jquery.hDialog.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        var pathHome = '';
+        function ajaxFormRequestExIndex(url, data, pathHome, backFunc, failBackFunc, noTip) {
+            var startDate = new Date();
+            $.ajax({
+                url: url,
+                type: "POST",
+                data: data,
+                async: true,//设置异步
+                dataType: "JSON",
+                success: function (data) {
+                    var endDate = new Date();
+                    var df = (endDate.getTime() - startDate.getTime());
+                    var result = data;
+
+                    setTimeout(function () {
+
+                        if (result.status == 'success') {
+
+                            if (backFunc != null) {
+                                backFunc(result);
+                            }
+
+                            if (result.message) {
+                                $.tooltip(result.message);
+                            }
+                        } else {
+                            if (failBackFunc != null) {
+                                failBackFunc();
+                            }
+                            if (result.message) {
+                                $.tooltip(result.message);
+                            }
+                        }
+                    }, df > 1000 ? df : 1000);
+
+                },
+                error: function (msg) {
+                }
+            });
+        }
+
+
+    </script>
+</head>
+<body>
+<!--content-->
+<canvas id="Mycanvas"></canvas>
+<script>
+    //定义画布宽高和生成点的个数
+    var WIDTH = window.innerWidth, HEIGHT = window.innerHeight, POINT = 35;
+
+    var canvas = document.getElementById('Mycanvas');
+    canvas.width = WIDTH,
+        canvas.height = HEIGHT;
+    var context = canvas.getContext('2d');
+    context.strokeStyle = 'rgba(0,0,0,0.02)',
+        context.strokeWidth = 1,
+        context.fillStyle = 'rgba(0,0,0,0.05)';
+    var circleArr = [];
+
+    //线条：开始xy坐标，结束xy坐标，线条透明度
+    function Line (x, y, _x, _y, o) {
+        this.beginX = x,
+            this.beginY = y,
+            this.closeX = _x,
+            this.closeY = _y,
+            this.o = o;
+    }
+    //点：圆心xy坐标，半径，每帧移动xy的距离
+    function Circle (x, y, r, moveX, moveY) {
+        this.x = x,
+            this.y = y,
+            this.r = r,
+            this.moveX = moveX,
+            this.moveY = moveY;
+    }
+    //生成max和min之间的随机数
+    function num (max, _min) {
+        var min = arguments[1] || 0;
+        return Math.floor(Math.random()*(max-min+1)+min);
+    }
+    // 绘制原点
+    function drawCricle (cxt, x, y, r, moveX, moveY) {
+        var circle = new Circle(x, y, r, moveX, moveY)
+        cxt.beginPath()
+        cxt.arc(circle.x, circle.y, circle.r, 0, 2*Math.PI)
+        cxt.closePath()
+        cxt.fill();
+        return circle;
+    }
+    //绘制线条
+    function drawLine (cxt, x, y, _x, _y, o) {
+        var line = new Line(x, y, _x, _y, o)
+        cxt.beginPath()
+        cxt.strokeStyle = 'rgba(0,0,0,'+ o +')'
+        cxt.moveTo(line.beginX, line.beginY)
+        cxt.lineTo(line.closeX, line.closeY)
+        cxt.closePath()
+        cxt.stroke();
+
+    }
+    //初始化生成原点
+    function init () {
+        circleArr = [];
+        for (var i = 0; i < POINT; i++) {
+            circleArr.push(drawCricle(context, num(WIDTH), num(HEIGHT), num(15, 2), num(10, -10)/40, num(10, -10)/40));
+        }
+        draw();
+    }
+
+    //每帧绘制
+    function draw () {
+        context.clearRect(0,0,canvas.width, canvas.height);
+        for (var i = 0; i < POINT; i++) {
+            drawCricle(context, circleArr[i].x, circleArr[i].y, circleArr[i].r);
+        }
+        for (var i = 0; i < POINT; i++) {
+            for (var j = 0; j < POINT; j++) {
+                if (i + j < POINT) {
+                    var A = Math.abs(circleArr[i+j].x - circleArr[i].x),
+                        B = Math.abs(circleArr[i+j].y - circleArr[i].y);
+                    var lineLength = Math.sqrt(A*A + B*B);
+                    var C = 1/lineLength*7-0.009;
+                    var lineOpacity = C > 0.03 ? 0.03 : C;
+                    if (lineOpacity > 0) {
+                        drawLine(context, circleArr[i].x, circleArr[i].y, circleArr[i+j].x, circleArr[i+j].y, lineOpacity);
+                    }
+                }
+            }
+        }
+    }
+
+    //调用执行
+    window.onload = function () {
+        init();
+        setInterval(function () {
+            for (var i = 0; i < POINT; i++) {
+                var cir = circleArr[i];
+                cir.x += cir.moveX;
+                cir.y += cir.moveY;
+                if (cir.x > WIDTH) cir.x = 0;
+                else if (cir.x < 0) cir.x = WIDTH;
+                if (cir.y > HEIGHT) cir.y = 0;
+                else if (cir.y < 0) cir.y = HEIGHT;
+
+            }
+            draw();
+        }, 16);
+    }
+
+</script>
+
+<div class="login" style=" right:20%; top:25%;">
+    <form id="loginForm" name="loginForm" method="post" action="#">
+        <p class="logintit">欢迎登录云TMS服务</p>
+        <label id="usernameDiv">&nbsp;用户名：</label>
+        <input name="username" id="username" type="text" maxlength="30" class="loginname">
+        <label id="passwordDiv">&nbsp;密码：</label>
+        <input name="password" id="password" type="password" maxlength="30" class="loginpass">
+        <p class="login_p"><span class="login_for"><input id="notlogin" type="checkbox" name="notlogin" class="input_check"> 七天内免登录</span></p>
+        <p id="enter" class="loginSubmit" onclick="ajaxLoginFun();">登录</p>
+    </form>
+</div>
+<script type="text/javascript">
+    function encrypt(word) {
+        var key = CryptoJS.enc.Utf8.parse("****171229171229");
+        var iv = CryptoJS.enc.Utf8.parse('****171229171229');
+        var srcs = CryptoJS.enc.Utf8.parse(word);
+        var encrypted = CryptoJS.AES.encrypt(srcs, key, {iv: iv, mode: CryptoJS.mode.CBC});
+        return encrypted.toString();
+    }
+
+
+    var pathHome = '';
+    var msgId = '';
+    var msg = '';
+    var type = 'error';
+    var targetMode = '';
+    if (msgId == '1') {
+        msg = '当前账号已在其它地方登录，如有需要请重新登录！';
+    }
+    var isVisible = msg == '' ? false : true;
+    if (msg != '') {
+        $.tooltip(msg);
+    }
+    //    showMessage(msg, type, -1, isVisible, pathHome);
+    /**
+     *验证码方法
+     **/
+    function changeValidateCode(obj) {
+        var timeNow = new Date().getTime();
+        obj.src = '/pages/WlUser/changeValidateCode.56linked?time='
+                + timeNow;
+    }
+
+    function sleep(numberMillis) {
+        var now = new Date();
+        var exitTime = now.getTime() + numberMillis;
+        while (true) {
+            now = new Date();
+            if (now.getTime() > exitTime)
+                return;
+        }
+    }
+
+    /**
+     *验证是否显示验证码
+     **/
+    function validateCodeIsShow() {
+        if ($.cookie('notlogin') != null) {
+            $('#notlogin').attr("checked", 'checked');
+            if ($.cookie('username') != null && $.cookie('password') != null) {
+                $('#username').attr("value", $.cookie('username'));
+                $('#password').attr("value", $.cookie('password'));
+            }
+        }
+        if (parseInt($.cookie('login')) >= 3) {
+            $("#yzmDiv").css("display", "block");
+        } else {
+            $("#yzmDiv").css("display", "none");
+        }
+        //alert($.cookie('loginusername'));
+        if ($.cookie('notlogin') != null && $.cookie('username') != null
+                && $.cookie('password') != null) {
+            if (msgId != '1') {
+                ajaxLoginFun();
+            }
+        }
+        if ($.cookie('loginusername') != null
+                && $.cookie('loginuserpassword') != null) {
+
+            ajaxLoginFun();
+        }
+    }
+    ;
+
+    /**
+     *回车事件
+     **/
+    $(document).keydown(function (event) {
+        if (event.keyCode == 13) {
+            ajaxLoginFun();
+        }
+    });
+
+    /**
+     *Login登录方法
+     **/
+    function ajaxLoginFun() {
+        if ($('#username').val() == "" || $('#password').val() == "") {
+            msg = '用户名或密码为空！'
+//            showMessage(msg, type, 3000, true, pathHome);
+            $.tooltip(msg);
+            return false;
+        }
+
+        var url = 'https://www.56linked.com/pages/WlUser/login.56linked';
+
+        var password = encrypt($('#password').val());
+
+        var data = {
+            username: $('#username').val(),
+            password: password,
+            volidate: $('#volidate').val()
+        };
+
+        var toUrl = '..html';
+
+        function handler(result) {
+            $.hideLoading();
+            var JSESSIONID = result.data.JSESSIONID;
+            var code = result.data.code;
+
+            $.cookie('JSESSIONID', JSESSIONID);
+            var checked = $('input[name="notlogin"]:checked').val();
+            if (checked) {
+                $.cookie('username', $('#username').val(), {expires: 7});
+                $.cookie('password', $('#password').val(), {expires: 7});
+                $.cookie('notlogin', checked, {expires: 7});
+            } else {
+                $.cookie('username', null);
+                $.cookie('password', null);
+                $.cookie('notlogin', null);
+            }
+
+            if (code == -7) {
+                $.cookie('login', null);
+
+                window.location = toUrl ? toUrl : 'lDmfPJ9P.html';
+            } else if (code == -11) {
+                $.cookie('login', null);
+
+                window.location = toUrl ? toUrl : 'KPa8GMwF.html';
+            }
+            if (code == 0) {
+                $.cookie('login', null);
+
+                window.location = toUrl ? toUrl : 'index.html';
+            }
+        }
+
+        var failHandler = function () {
+            $.hideLoading();
+        };
+        $.showLoading();
+        ajaxFormRequestExIndex(url, data, pathHome, handler, failHandler);
+    }
+
+    function getToUrl(params) {
+        var reg = new RegExp("to=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+        var r = params.substr(1).match(reg);  //匹配目标参数
+        if (r != null) {
+            return "" + unescape(r[0].replace("to=", ""));
+        }
+        return null; //返回参数值
+    }
+
+    validateCodeIsShow();
+</script>
+<div class="dis-w100 page-footer-wrap page-min-width">
+    <div class="main overflowH">
+        <div class="contact fl">
+            <h1>上海毕铃信息科技有限公司</h1>
+            <p>全国统一咨询热线：400-1516-156
+                <br>商务合作热线：+86 21-58485590
+                <br>地址：上海市浦东新区南泉北路1029号中电大厦2002室（总部）
+                <br>Email：support@56linked.com
+                <br>邮编：200120
+            </p>
+        </div>
+        <div class="ewmbox">
+            <div class="ewm">
+                <img src="../images/erm_wllgz.png">
+                <img src="../images/erm_wzgz.png">
+            </div>
+        </div>
+        <hr style=" width:1100px; color:#CCC; opacity:0.2 ">
+    </div>
+</div>
+
+
+<div class="dis-w100 page-footer-wrap page-min-width">
+    <div class="main overflowH">
+        <div class="copyright">上海毕铃信息科技有限公司版权所有
+            &nbsp;网站许可证：<a href="http://www.miitbeian.gov.cn/">沪ICP备16051493号</a> &nbsp;&nbsp;
+            <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+            document.write(unescape("%3Cspan id='cnzz_stat_icon_1259790969'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/stat.php%3Fid%3D1259790969' type='text/javascript'%3E%3C/script%3E"));</script>
+            <script>
+                var _hmt = _hmt || [];
+                (function() {
+                    var hm = document.createElement("script");
+                    hm.src = "js/hm.js";
+                    var s = document.getElementsByTagName("script")[0];
+                    s.parentNode.insertBefore(hm, s);
+                })();
+            </script>
+        </div>
+        <div class="downnav"><a href="javascript:;" class="bounceIn dialog">预约演示</a>&nbsp;|&nbsp;<a href="city.html">百城论坛</a>&nbsp;|&nbsp;<a href="company.html">合作公司</a></div>
+        <div class="downnav"><a href="http://weibo.com/p/1006061286807753/home" ><img src="../images/weibo.png"></a><a href="http://www.linkedin.com/company/vtradex-?trk=top_nav_home" ><img src="../images/in.png" /></a></div>
+    </div>
+</div>
+</body>
+</html>
+

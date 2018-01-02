@@ -1,0 +1,260 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>物流链.云盒</title>
+<link href="styles/login/index.css" rel="stylesheet" type="text/css">
+<link href="styles/login/demo1.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="styles/login/right.css" type="text/css" />
+<link href="styles/login/responsive-menu.css"
+	tppabs="http://box.56linked.com/styles/login/responsive-menu.css"
+	rel="stylesheet">
+
+<style type="text/css">
+/*banner*/
+.slide {
+	min-width: 640px;
+	height: 572px;
+	position: relative;
+	overflow: hidden;
+	margin-top: 60px;
+}
+
+.login {
+	color: #fff;
+	background: url("images/login/index_03.png")
+		/*tpa=http://box.56linked.com/images/login/index_03.png*/ no-repeat
+		left top;
+	padding: 30px 25px 0px;
+	width: 265px;
+	line-height: 30px;
+	height: 384px;
+	position: absolute;
+	right: 100px;
+	top: 170px;
+	z-index: 899;
+}
+
+form {
+	display: block
+}
+
+.logintit {
+	font-size: 24px;
+	color: #fff;
+	text-align: center;
+	border-bottom: 1px solid #CCC;
+	line-height: 45px;
+	height: 45px;
+	margin-bottom: 20px;
+}
+
+.login label {
+	display: block;
+	/* padding-top: 10px; */
+	font-size: 18px;
+}
+
+section.p11 {
+	background-image: url("images/login/pGwGaKe.jpg")
+		/*tpa=http://box.56linked.com/images/login/pGwGaKe.jpg*/;
+}
+
+.loginname, .loginpass {
+	background: url("images/login/index_02.png")
+		/*tpa=http://box.56linked.com/images/login/index_02.png*/ no-repeat
+		left top;
+	text-indent: 15px;
+	border: none;
+	color: #fff;
+	width: 264px;
+	height: 28px;
+	line-height: 28px;
+	outline: none;
+	margin-bottom: 15px;
+}
+
+.login_p {
+	height: 34px;
+	line-height: 30px;
+	padding-left: 8px
+}
+
+.login_for {
+	float: left;
+	text-decoration: underline;
+}
+
+.login_for, .login_for2 {
+	font-size: 16px;
+}
+
+.input_check {
+	vertical-align: middle;
+}
+
+.loginSubmit {
+	clear: both;
+	width: 100%;
+	text-align: center;
+	font-size: 18px;
+	height: 38px;
+	line-height: 38px;
+	background: url("images/login/index_05.png")
+		/*tpa=http://box.56linked.com/images/login/index_05.png*/ no-repeat
+		center top;
+	margin-top: 18px;
+	cursor: pointer;
+}
+</style>
+<link rel="stylesheet" href="styles/login/common.css" />
+<!-- 弹窗form基本样式 -->
+<link rel="stylesheet" href="styles/login/animate.min.css" />
+<style>
+.company-info {
+	background: #000;
+	font-size: 14px;
+	text-align: center;
+	line-height: 32px;
+	color: white;
+	min-width: 1130px;
+}
+</style>
+<link href="styles/index1/right.css-v=20171227.css" rel="stylesheet"
+	type="text/css">
+<link href="styles/index1/common.css-v=20171227.css" rel="stylesheet"
+	type="text/css">
+<!-- 弹窗form基本样式 -->
+<link href="styles/index1/animate.min.css-v=20171227.css"
+<!--top-->
+<link href="styles/index1/responsive-menu.css-v=20171227.css"
+	rel="stylesheet" type="text/css">
+</head>
+<body onload="return validateCodeIsShow();">
+	<!--top-->
+	<div class="top">
+		<h3
+			style="padding-left: 10px; position: absolute;font-size: 32px; margin-top: 15px;">黄桶幺铺物流云平台</h3>
+		<div style="position: relative;">
+			<nav class="rm-nav"
+				style="margin-left: 610px; margin-top: 15px; margin-bottom: 20px">
+				<ul>
+					<li><a href="main.html">首页</a></li>
+					<li><a href="company.html">生态圈</a></li>
+					<li><a href=""  class="current">云服务 </a>
+						<ul style="width: 250px;">
+							<li style="width: 250px;"><a href="tms.html">云TMS运输管理服务</a></li>
+							<li style="width: 250px;"><a href="ros.html">云ROS路径优化服务</a></li>
+							<li style="width: 250px;"><a href="box.html">云盒追踪服务</a></li>
+							<li style="width: 250px;"><a href="wms.html">云WMS仓储管理服务</a></li>
+							<li style="width: 250px;"><a href="book.html">月台预约服务</a></li>
+							<li style="width: 250px;"><a href="pair.html">易速配服务</a></li>
+						</ul></li>
+					<li><a href="xietog.html">协调运输</a></li>
+					<li><a href="news.html">新闻资讯</a></li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+
+	<!-- banner 开始 -->
+	<div class="slide">
+		<div class="main overflowH">
+			<img src="images/login/top.png" style="position: absolute; top: 10%;">
+		</div>
+		<ul>
+			<li><img src="images/login/topbanner.jpg"
+				class="dialog"></li>
+		</ul>
+	</div>
+	<!-- banner 结束 -->
+
+	<div class="clients" id="clients">
+		<div class="main overflowH">
+			<h1>多维度跟踪货物在途情况</h1>
+			<img src="images/login/cut_line.png"
+				tppabs="http://box.56linked.com/images/login/cut_line.png"
+				style="padding-left: 41%">
+			<p class="biggerp">地图&nbsp;&nbsp;&brvbar;&nbsp;&nbsp;节点&nbsp;&nbsp;&brvbar;&nbsp;&nbsp;日志</p>
+			<img src="images/login/multi.png"
+				tppabs="http://box.56linked.com/images/login/multi.png"
+				style="width: 100%; display: block;">
+
+		</div>
+	</div>
+
+	<div class="clients bg2">
+		<div class="main overflowH">
+			<h1>异常问题及时预警</h1>
+			<img src="images/login/cut_line.png"
+				tppabs="http://box.56linked.com/images/login/cut_line.png"
+				style="padding-left: 41%">
+			<p class="biggerp">
+				有异常？<br>及早发现，及早处理。
+			</p>
+			<img src="images/login/boxpart.png"
+				tppabs="http://box.56linked.com/images/login/boxpart.png">
+
+		</div>
+	</div>
+
+	<div class="clients">
+		<div class="main overflowH">
+			<h1>高配设备，助力监管</h1>
+			<img src="images/login/cut_line.png"
+				tppabs="http://box.56linked.com/images/login/cut_line.png"
+				style="padding-left: 41%">
+			<p class="biggerp">外形小巧，材质坚固，可灵活运用（跟车、跟司机、跟货），对货物的在途信息进行实时有效追踪。</p>
+			<img src="images/login/multi4.png"
+				tppabs="http://box.56linked.com/images/login/multi4.png">
+
+		</div>
+	</div>
+
+	<div class="clients bg2">
+		<div class="main overflowH">
+			<h1>彻底解决货物中转追踪问题</h1>
+			<img src="images/login/cut_line.png"
+				tppabs="http://box.56linked.com/images/login/cut_line.png"
+				style="padding-left: 41%">
+			<p class="biggerp">设备外形小巧，材质坚固，信号超强，可随意放置于货箱，让您真正意义上的对“货”跟踪。</p>
+			<img src="images/login/boxpart2.png"
+				tppabs="http://box.56linked.com/images/login/boxpart2.png">
+
+		</div>
+	</div>
+
+	<div class="clients" style="padding-bottom: 0">
+		<div class="main overflowH">
+			<h1>完美支持移动办公</h1>
+			<img src="images/login/cut_line.png"
+				tppabs="http://box.56linked.com/images/login/cut_line.png"
+				style="padding-left: 41%">
+			<p class="biggerp">支持手机端移动办公，随时关注货物动态。</p>
+			<div class="mobilebox">
+				<img src="images/login/mobile01.png"
+					tppabs="http://box.56linked.com/images/login/mobile01.png"
+					class="mobile01"> <img src="images/login/mobile02.png"
+					tppabs="http://box.56linked.com/images/login/mobile02.png"
+					class="mobile02"> <img src="images/login/mobile03.png"
+					tppabs="http://box.56linked.com/images/login/mobile03.png"
+					class="mobile03"> <img src="images/login/mobile04.png"
+					tppabs="http://box.56linked.com/images/login/mobile04.png"
+					class="mobile04">
+			</div>
+		</div>
+	</div>
+
+	<section class="p11"> <a
+		href=""
+		tppabs="http://www.56linked.com/tms.html" 
+		title="在途信息的可视化管理"> 云TMS运输管理服务
+		<p
+			style="font-size: 18px; color: #f39b16; font-weight: normal; padding-bottom: 30px;">点我查看详情&nbsp;&gt;&gt;</p>
+	</a> </section>
+	<div style="height: 30px; min-width: 1230px;">
+		<div class="company-info">北京天大天科科技股份有限公司 版权所有</div>
+	</div>
+</body>
+</html>

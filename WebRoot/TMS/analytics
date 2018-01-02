@@ -1,0 +1,27 @@
+function piResponse() {
+piSetCookie('visitor_id374492', '954131480', 3650);
+piSetCookie('visitor_id374492-hash', '5f50821df26820f684393bc284f8e8fcc64364e9db2ce6c134b14c9068719e7e062a58ea6a9de469ab71e3b9e6b4baff71f21c91', 3650);
+
+if (document.location.protocol != "https:") {
+var analytics_link = "http://" + "www2.otms.com/analytics?";
+pi.tracker.visitor_id='954131480';
+
+pi.tracker.visitor_id_sign='5f50821df26820f684393bc284f8e8fcc64364e9db2ce6c134b14c9068719e7e062a58ea6a9de469ab71e3b9e6b4baff71f21c91';
+
+var variables = 'conly=true';
+for (property in pi.tracker) {
+	variables += "&"+property+"="+pi.tracker[property];
+}
+var headID = document.getElementsByTagName("head")[0];
+piScriptObj[piScriptNum] = document.createElement('script');
+piScriptObj[piScriptNum].type = 'text/javascript';
+piScriptObj[piScriptNum].src = analytics_link + variables;
+headID.appendChild(piScriptObj[piScriptNum]);
+piScriptObj[piScriptNum].onload = function() { return; }
+}
+}
+piResponse();
+
+
+
+

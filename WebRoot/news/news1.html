@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>运输不该把时间浪费在等待上，月台预约服务实现降本增效</title>
+<link href="../styles/index1/index.css-v=20171227.css" rel="stylesheet"
+	type="text/css">
+<link href="../styles/index1/right.css-v=20171227.css" rel="stylesheet"
+	type="text/css">
+<link href="../styles/index1/common.css-v=20171227.css" type="text/css">
+<!-- 弹窗form基本样式 -->
+<link href="../styles/index1/animate.min.css-v=20171227.css"
+	rel="stylesheet" type="text/css">
+<link href="../styles/index1/responsive-menu.css-v=20171227.css"
+	rel="stylesheet" type="text/css">
+<!-- 动画效果 -->
+<style>
+.company-info {
+	background: #000;
+	font-size: 14px;
+	text-align: center;
+	line-height: 32px;
+	color: white;
+	min-width: 1130px;
+}
+</style>
+</head>
+<body>
+	<!--top-->
+	<div class="top">
+		<h3
+			style="padding-left: 10px; position: absolute; font-size: 32px; margin-top: 15px;">黄桶幺铺物流云平台</h3>
+		<div style="position: relative;">
+			<nav class="rm-nav"
+				style="margin-left:610px; margin-top: 15px; margin-bottom: 20px">
+				<ul>
+					<li><a href="../main.html">首页</a></li>
+					<li><a href="../company.html">生态圈</a></li>
+					<li><a href="">云服务 </a>
+						<ul style="width: 250px;">
+							<li style="width: 250px;"><a href="../tms.html">云TMS运输管理服务</a></li>
+							<li style="width: 250px;"><a href="../ros.html">云ROS路径优化服务</a></li>
+							<li style="width: 250px;"><a href="../box.html">云盒追踪服务</a></li>
+							<li style="width: 250px;"><a href="../wms.html">云WMS仓储管理服务</a></li>
+							<li style="width: 250px;"><a href="../book.html">月台预约服务</a></li>
+							<li style="width: 250px;"><a href="../pair.html">易速配服务</a></li>
+						</ul></li>
+					<li><a href="../xietog.html">协调运输</a></li>
+					<li><a href="../news.html"   class="current">新闻资讯</a></li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+	<!-- banner 开始 -->
+	<!-- banner 结束 -->
+	<div class="newslist">
+		<div class="main overflowH" id="content">
+			<div class="news">
+				<h1 style="text-align: center;" title="运输不该把时间浪费在等待上，月台预约服务实现降本增效">运输不该把时间浪费在等待上，月台预约服务实现降本增效</h1>
+				<h2 style="text-indent: 2em;">2017-11-06</h2>
+				<p
+					style="text-align: justify; text-indent: 32px; -ms-text-justify: inter-ideograph;">
+					<span
+						style="font-family: 微软雅黑; font-size: 14px; font-weight: normal;"><span
+						style="font-family: 微软雅黑;">快，是物流行业的常态；效率，是企业运营的追求与目标。从仓库到运输，在不断把速度提升到极致之时，管理者也应当随时反思着一个重要的问题：时间都去哪儿了？</span></span>
+				</p>
+				<p
+					style="text-align: justify; text-indent: 32px; -ms-text-justify: inter-ideograph;">
+					<span
+						style="font-family: 微软雅黑; font-size: 14px; font-weight: normal;"><span
+						style="font-family: 微软雅黑;">一个有效率的运输过程，一个有速度的仓库作业，是应该在每一个细节上精益求精的。就月台的管理而言，它就需要考虑到订单紧急程度、承运商平衡、调度维护等许许多多的因素。如果企业没有形成起合理的仓管规则，没有搭建稳定的系统，就只会事倍功半，将本该在路上争夺的时间浪费在月台排队这种盲目的等待上。</span></span>
+				</p>
+				<p style="text-align: center; -ms-text-justify: inter-ideograph;">
+				</p>
+				<p
+					style="text-align: justify; text-indent: 32px; -ms-text-justify: inter-ideograph;">
+					<span
+						style="font-family: 微软雅黑; font-size: 14px; font-weight: normal;"><span
+						style="font-family: 微软雅黑;">仓库管理中常常会出现这样的问题：</span></span>
+				</p>
+				<p
+					style="text-align: justify; text-indent: 32px; -ms-text-justify: inter-ideograph;">
+					<span
+						style="font-family: 微软雅黑; font-size: 14px; font-weight: normal;">1.
+						仓库的月台有时有很多车辆在排队，有时又完全空闲，这样的情况是导致</span><strong><span
+						style="font-family: 微软雅黑; font-size: 14px; font-weight: bold;"><span
+							style="font-family: 微软雅黑;">资源的大大浪费</span></span></strong><span
+						style="font-family: 微软雅黑; font-size: 14px; font-weight: normal;"><span
+						style="font-family: 微软雅黑;">。</span></span>
+				</p>
+				<p
+					style="text-align: justify; text-indent: 32px; -ms-text-justify: inter-ideograph;">
+					<span
+						style="font-family: 微软雅黑; font-size: 14px; font-weight: normal;">2.
+						承运方和仓储方预约提货时需要</span><strong><span
+						style="font-family: 微软雅黑; font-size: 14px; font-weight: bold;"><span
+							style="font-family: 微软雅黑;">反复线下电话邮件沟通</span></span></strong><span
+						style="font-family: 微软雅黑; font-size: 14px; font-weight: normal;"><span
+						style="font-family: 微软雅黑;">，效率较低且不规范。</span></span>
+				</p>
+				<p
+					style="text-align: justify; text-indent: 32px; -ms-text-justify: inter-ideograph;">
+					<span
+						style="font-family: 微软雅黑; font-size: 14px; font-weight: normal;">3.
+						司机到达仓库后，也没有自动，标准的机制去指导排队和停靠月台，</span><strong><span
+						style="font-family: 微软雅黑; font-size: 14px; font-weight: bold;"><span
+							style="font-family: 微软雅黑;">运输和仓储没有有效联动</span></span></strong><span
+						style="font-family: 微软雅黑; font-size: 14px; font-weight: normal;"><span
+						style="font-family: 微软雅黑;">。</span></span>
+				</p>
+				<p
+					style="text-align: justify; text-indent: 32px; -ms-text-justify: inter-ideograph;">
+					<span
+						style="font-family: 微软雅黑; font-size: 14px; font-weight: normal;"><span
+						style="font-family: 微软雅黑;">如果你是一个司机，你可以想象得到，在货物进出场的高峰时段，你甚至不知道前面还有多少辆无奈地等待着进场的车辆。如果你是一个仓管员，你一定对扎堆进场的货车头疼不已，束手无策。</span></span>
+				</p>
+				<p
+					style="text-align: justify; text-indent: 32px; -ms-text-justify: inter-ideograph;">
+					<span
+						style="font-family: 微软雅黑; font-size: 14px; font-weight: normal;"><span
+						style="font-family: 微软雅黑;">你以为这是仓库管理的普遍现象？不，这只是信息不对称的结果，这是物流未能达到标准化水平的乱象。反复的线下电话邮件沟通并不能消除承运方和仓储方的信息不对称，但一个提供月台预约的服务系统就能做到。</span></span>
+				</p>
+				<p
+					style="text-align: justify; text-indent: 32px; -ms-text-justify: inter-ideograph;">
+					<span
+						style="font-family: 微软雅黑; font-size: 14px; font-weight: normal;"><span
+						style="font-family: 微软雅黑;">为了解决这一困扰，物流链云平台推出了</span>“月台预约”服务，通过系统实现仓管员对月台的有效监控、对月台的管理，实现承运商提前进行收货或发货仓的月台预约。通过该服务，管理者可以在图像可视化界面清楚地看到月台的使用状态，轻松规划司机进场离场时间，将整个仓库的进出作业都形象地展现在眼前，实现效率的飞速提升。在物流链云平台的帮助下，物流信息变得更加透明具体，使用月台预约服务非常简单，能轻松上手。</span>
+				</p>
+				<p style="text-align: center; -ms-text-justify: inter-ideograph;">
+				</p>
+				<p
+					style="text-align: justify; text-indent: 32px; -ms-text-justify: inter-ideograph;">
+					<span
+						style="font-family: 微软雅黑; font-size: 14px; font-weight: normal;"><span
+						style="font-family: 微软雅黑;">首先，仓管员先在系统中将月台维护到对应的仓库中，不需要的月台可删除重新维护。接着，调度员或者是相关操作人员，在按车跟踪中对已有维护仓库月台的调度单进行收货</span>/发货的预约。预约页面十分简洁，但又确保了信息的完备性，便于管理者权衡利弊，安排协调。最后，双方都能及时在系统中查看到各承运商的预约情况，方便管控。</span>
+				</p>
+				<p
+					style="text-align: justify; text-indent: 32px; -ms-text-justify: inter-ideograph;">
+					<span
+						style="font-family: 微软雅黑; font-size: 14px; font-weight: normal;"><span
+						style="font-family: 微软雅黑;">承运商在预约完成后，可根据需求撤消相应预约单，此时，相应的信息将会发送到仓管员手机上，提醒其及时进行协调调配。而仓管员收到预约后，通过图表能清楚地查看各月台各时段预约情况，根据实际情况考量进行同意或拒绝操作。在双方的良性互动下，仓库的月台资源被最大化地开发与利用，让高水平的物流为企业赋能。</span></span>
+				</p>
+				<p
+					style="text-align: justify; text-indent: 32px; -ms-text-justify: inter-ideograph;">
+					<span
+						style="font-family: 微软雅黑; font-size: 14px; font-weight: normal;"><span
+						style="font-family: 微软雅黑;">在现代工业的发展要求下，物流最终会犹如生产线一样，从企业的一端联通消费者，每一环节都是关键，仓库管理当然是最基础的一步。在现代工业的支持下，搬运叉车能够安全、快速地进出辅助运输车辆进行装卸货作业，但如果月台进场跟不上节奏，那将是整个高速运转系统的极大浪费。</span></span>
+				</p>
+				<p style="text-align: center; -ms-text-justify: inter-ideograph;">
+				</p>
+				<p
+					style="text-align: justify; text-indent: 32px; -ms-text-justify: inter-ideograph;">
+					<span
+						style="font-family: 微软雅黑; font-size: 14px; font-weight: normal;"><span
+						style="font-family: 微软雅黑;">月台的基本作用是装卸货物、进出库货物暂存、车辆停靠，同时，也是实现网络中线与节点的衔接转换。月台的协调与设计使货物装卸作业高效、有序、省力，而物流链平台月台预约服务的出现，则让效率成指数倍增长，这就是信息技术的魅力。由此可见，物流的发展终究要依靠技术进步，我们也可以从中看得到物流服务从粗放式发展正在向精细化转型。</span></span>
+				</p>
+				<p
+					style="text-align: justify; text-indent: 32px; -ms-text-justify: inter-ideograph;">
+					<span
+						style="font-family: 微软雅黑; font-size: 14px; font-weight: normal;"><span
+						style="font-family: 微软雅黑;">在</span>9月大促期间，天猫超市依然能保持着晚上下单隔天中午送达的高水平物流服务。这种高效无疑给对手，给实体店家，给整个物流行业的人们都带来一种压力，倒逼物流系统升级。物流链精心研发的强大云TMS系统就嵌合了月台预约服务，如今已经成为了智慧供应链解决方案上必不可少的重要环节，也受到了华兴玻璃、卡夫亨氏</span><span
+						style="font-family: 微软雅黑; font-size: 14px;"><span
+						style="font-family: 微软雅黑;">等知名制造企业</span></span><span
+						style="font-family: 微软雅黑; font-size: 14px;"><span
+						style="font-family: 微软雅黑;">的一致好评。</span></span>
+				</p>
+				<p
+					style="text-align: justify; text-indent: 32px; -ms-text-justify: inter-ideograph;">
+					<span
+						style="font-family: 微软雅黑; font-size: 14px; font-weight: normal;"><span
+						style="font-family: 微软雅黑;">在竞争剧烈的市场上，未能追赶上变化潮流的企业将会成为历史。显然，物流信息化、物流透明化是大势所趋，只有拥抱物流先进技术，步入智能化物流领域的企业方能降本增效，在拼速度拼服务的时代杀出一条血路。</span></span>
+				</p>
+				<p
+					style="text-align: justify; text-indent: 32px; -ms-text-justify: inter-ideograph;">
+					<strong><span
+						style="font-family: 微软雅黑; font-size: 14px; font-weight: bold;"><span
+							style="font-family: 微软雅黑;">关于物流链云平台：</span></span></strong>
+				</p>
+				<p
+					style="text-align: justify; text-indent: 32px; -ms-text-autospace: ideograph-numeric; -ms-text-justify: inter-ideograph;">
+					<span style="font-family: 微软雅黑; font-size: 14px;"><span
+						style="font-family: 微软雅黑;">物流链云平台是一款基于</span>SaaS模式，提供移动应用</span><span
+						style="font-family: 微软雅黑; font-size: 14px;"><span
+						style="font-family: 微软雅黑;">端</span></span><span
+						style="font-family: 微软雅黑; font-size: 14px;"><span
+						style="font-family: 微软雅黑;">的云运输管理</span></span><span
+						style="font-family: 微软雅黑; font-size: 14px;"><span
+						style="font-family: 微软雅黑;">、云路径优化、</span></span><span
+						style="font-family: 微软雅黑; font-size: 14px;"><span
+						style="font-family: 微软雅黑;">货物追踪</span></span><span
+						style="font-family: 微软雅黑; font-size: 14px;"><span
+						style="font-family: 微软雅黑;">管理等功能的信息化平台，高效链接</span></span><span
+						style="font-family: 微软雅黑; font-size: 14px;"><span
+						style="font-family: 微软雅黑;">企业及其上下游，实现物流作业执行监控</span></span><span
+						style="font-family: 微软雅黑; font-size: 14px;"><span
+						style="font-family: 微软雅黑;">及</span></span><span
+						style="font-family: 微软雅黑; font-size: 14px;"><span
+						style="font-family: 微软雅黑;">供应链可视化</span></span><span
+						style="font-family: 微软雅黑; font-size: 14px;"><span
+						style="font-family: 微软雅黑;">。</span></span>
+				</p>
+				<p
+					style="text-align: justify; text-indent: 32px; -ms-text-autospace: ideograph-numeric; -ms-text-justify: inter-ideograph;">
+					<span style="font-family: 微软雅黑; font-size: 14px;"><span
+						style="font-family: 微软雅黑;">物流链云平台是物流信息化领军企业唯智公司基于在运输管理系统（</span>TMS）领域长达十五年的经验积累，以及对中国客户运输管理需求的深刻理解，结合最先进的互联网技术，历时20个月耗资数千万精心打造的新一代运行在云端的TMS
+						产品。 </span>
+				</p>
+				<p
+					style="text-align: justify; text-indent: 32px; -ms-text-autospace: ideograph-numeric; -ms-text-justify: inter-ideograph;">
+					<span style="font-family: 微软雅黑; font-size: 14px;"><span
+						style="font-family: 微软雅黑;">旨在打通供应链，采用租用模式，为货主、承运商、专线公司、司机、仓储服务商以及收货人提供成本低、成熟度高的物流管理平台</span></span><span
+						style="font-family: 微软雅黑; font-size: 14px;"><span
+						style="font-family: 微软雅黑;">，</span></span><span
+						style="font-family: 微软雅黑; font-size: 14px;"><span
+						style="font-family: 微软雅黑;">让企业通过和生态圈的互联互通实现物流管理升级。</span></span>
+				</p>
+				<p
+					style="text-align: justify; text-indent: 32px; -ms-text-autospace: ideograph-numeric; -ms-text-justify: inter-ideograph;">
+					<span style="font-family: 微软雅黑; font-size: 14px;"><span
+						style="font-family: 微软雅黑;">不同于传统的</span>TMS 软件产品，
+						物流链云平台采用SaaS服务租用模式，企业不再需要耗费大量的时间和金钱来选型和实施TMS软件，转而可以采用便捷的云TMS服务。物流链平台简单易学，账号开通即可使用，专属的客服团队，为您提供全天候的服务支持，大大节省了IT投入和运维成本。</span>
+				</p>
+				<p
+					style="text-align: justify; text-indent: 32px; -ms-text-autospace: ideograph-numeric; -ms-text-justify: inter-ideograph;">
+					<span style="font-family: 微软雅黑; font-size: 14px;"><span
+						style="font-family: 微软雅黑;">不同于其他轻量级的</span>TMS
+						租用平台仅提供部分简单的运输管理功能，物流链云平台是一套完整、成熟、高端的运输管理软件，覆盖了全面的运输管理功能需求，包括：订单管理、线路分单、调度配车、承运商管理、在线招标、全程实时监控、互联网车队管理、回单签收、KPI分析等全部TMS功能模块。</span>
+				</p>
+				<p
+					style="text-align: justify; text-indent: 32px; -ms-text-justify: inter-ideograph;">
+					<span
+						style="font-family: 微软雅黑; font-size: 14px; font-weight: normal;">&nbsp;</span>
+				</p>
+				<p>&nbsp;</p>
+			</div>
+		</div>
+	</div>
+	<div style="height: 30px; min-width: 1230px;">
+		<div class="company-info">北京天大天科科技股份有限公司 版权所有</div>
+	</div>
+</body>
+</html>
+
